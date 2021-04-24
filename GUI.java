@@ -26,7 +26,7 @@ public class GUI extends JFrame implements Action{
         CoursesPage.setHorizontalAlignment(JLabel.CENTER);
 
         JLabel Intro = new JLabel();
-        Intro.setText("Welcome, " + "Emmad Kashmir");
+        Intro.setText("Welcome, " + "Emmad Kashmiri");
         Intro.setHorizontalAlignment(JLabel.CENTER);
 
         //Left container of the page
@@ -38,20 +38,30 @@ public class GUI extends JFrame implements Action{
         button1 = new JButton();
         button1.setBounds(10, 25, 225, 50);
         button1.addActionListener(e -> System.out.println("deez nuts"));
+        button2.setText("Math");
         sidePanelLeft.add(button1);
 
         button2 = new JButton();
-
+        button2.setBounds(10, 85, 225, 50);
+        button2.setText("Biology");
+        button2.setFocusable(false);
+        button2.setBackground(Color.lightGray);
+        sidePanelLeft.add(button2);
 
         button3 = new JButton();
-
+        button3.setBounds(10, 145, 225, 50);
+        button3.setText("Computer Science"); 
+        sidePanelLeft.add(button3);
 
         button4 = new JButton();
-
-
+        button4.setBounds(10, 205, 225, 50);
+        button4.setText("English");
+        sidePanelLeft.add(button4);
 
         button5 = new JButton();
-        
+        button5.setBounds(10, 265, 225, 50);
+        button5.setText("French");
+        sidePanelLeft.add(button5);
 
         
         //Right container of the pagel

@@ -84,21 +84,4 @@ public class Assignment {
                 && (int)(rhs.grade * 100) == (int)(this.grade * 100);
     }
 
-    public static void main(String [] Args)
-    {
-        Assignment test = new Assignment("Quiz", 0, 0);
-
-        test.setWeight(25);
-        test.setGrade(test.calcualteGrade(100, 90));
-
-        System.out.println(test.getGrade());
-        System.out.println(test.getWeight());
-        System.out.println(test.getName());
-
-        System.out.println(test.calculateWeighted());
-
-        Assignment test2 = new Assignment("Quiz", 25, 90);
-
-        System.out.println(test.equals(test2));
-    }
 }
