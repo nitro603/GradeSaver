@@ -7,6 +7,10 @@ import javax.swing.*;
 public class GUI extends JFrame implements Action{
     
     private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
+    private JButton button5;
 
 
     GUI(){
@@ -35,6 +39,20 @@ public class GUI extends JFrame implements Action{
         button1.setBounds(10, 25, 225, 50);
         button1.addActionListener(e -> System.out.println("deez nuts"));
         sidePanelLeft.add(button1);
+
+        button2 = new JButton();
+
+
+        button3 = new JButton();
+
+
+        button4 = new JButton();
+
+
+
+        button5 = new JButton();
+        
+
         
         //Right container of the pagel
         JPanel sidePanelRight = new JPanel();
