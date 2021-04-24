@@ -18,7 +18,7 @@ public class GUI extends JFrame implements Action{
         JPanel top = new JPanel();
         top.setBackground(new Color(120,100,159));
         top.setLayout(new GridLayout(0,1));
-        top.setBounds(0,0,500,50);
+        top.setBounds(0,0,600,50);
 
         JLabel CoursesPage = new JLabel();
         CoursesPage.setText("Courses");
@@ -35,10 +35,21 @@ public class GUI extends JFrame implements Action{
         sidePanelLeft.setLayout(null);
         sidePanelLeft.setBackground(new Color(100,50,150));
 
+        //Right container of the pagel
+        JPanel sidePanelRight = new JPanel();
+        sidePanelRight.setBounds(250,50,350,450);
+        sidePanelRight.setLayout(new GridLayout(0,1));
+        sidePanelRight.setBackground(new Color(120,40,200));
+
+        JLabel menu = new JLabel();
+        menu.setBounds(, y, width, height);
+        menu.setText("Add grades");
+
+
         button1 = new JButton();
         button1.setBounds(10, 25, 225, 50);
-        button1.addActionListener(e -> System.out.println("deez nuts"));
-        button2.setText("Math");
+        button1.addActionListener(e -> sidePanelRight.add(menu));
+        button1.setText("Math");
         sidePanelLeft.add(button1);
 
         button2 = new JButton();
@@ -64,17 +75,16 @@ public class GUI extends JFrame implements Action{
         sidePanelLeft.add(button5);
 
         
-        //Right container of the pagel
-        JPanel sidePanelRight = new JPanel();
-        sidePanelRight.setBounds(250,50,250,450);
-        sidePanelRight.setLayout(new GridLayout(0,1));
-        sidePanelRight.setBackground(new Color(120,40,200));
+        
+
+        
+        
 
         setTitle("GradeSaver");
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(500,500);
+        setSize(600,500);
         setVisible(true);
         top.add(CoursesPage);
         top.add(Intro);
@@ -90,9 +100,10 @@ public class GUI extends JFrame implements Action{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         if(e.getSource()==button1){
-            //System.out.println("clicked on that boy");
+            JLabel menu = new JLabel();
+            menu.setText("Add Grades below");
+            //sidePanelRight.add(menu);
         }
     }
 
