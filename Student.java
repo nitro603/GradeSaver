@@ -3,13 +3,20 @@ import java.util.*;
 public class Student {
     
     private String name;
-    private int id;
+    private String id;
     private ArrayList<Course> courses = new ArrayList<Course>();
 
-    public Student(String name, int id)
+    public Student(String name, String id)
     {
         this.name = name;
         this.id = id;
+    }
+    //constructor to create  a copy of an object
+    public Student(Student student)
+    {
+        this.name = student.name;
+        this.id = studnet.id;
+        this.courses =  
     }
 
     //method to add a course into course list
@@ -70,7 +77,7 @@ public class Student {
         return name;
     }
     //method to get student's id
-    public int getId() 
+    public String getId() 
     {
         return id;
     }
@@ -86,7 +93,7 @@ public class Student {
         //loop through arraylist of courses, adding them to the string
         for(int i = 0; i < courses.size(); i++)
         {
-            coursesInfo += "\n" + courses.get(i).toString();
+            coursesInfo += "\n" + courses.get(i).getCourseName() + "   " + courses.get(i).getCourseGrade();
         }
         return "Name: " + this.name + "\nID: " + this.id + "\n" + coursesInfo;
     }

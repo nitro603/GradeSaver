@@ -38,17 +38,16 @@ public class GUI extends JFrame implements Action{
         //Right container of the pagel
         JPanel sidePanelRight = new JPanel();
         sidePanelRight.setBounds(250,50,350,450);
-        sidePanelRight.setLayout(new GridLayout(0,1));
+        sidePanelRight.setLayout(null);
         sidePanelRight.setBackground(new Color(120,40,200));
 
         JLabel menu = new JLabel();
-        menu.setBounds(, y, width, height);
-        menu.setText("Add grades");
-
+        menu.setBounds(250, 50, 50, 40);
+        sidePanelRight.add(menu);
 
         button1 = new JButton();
         button1.setBounds(10, 25, 225, 50);
-        button1.addActionListener(e -> sidePanelRight.add(menu));
+        button1.addActionListener(e -> menu.setText("<html>Hello World!<br/>blahblahblah</html>"));
         button1.setText("Math");
         sidePanelLeft.add(button1);
 
@@ -74,11 +73,7 @@ public class GUI extends JFrame implements Action{
         button5.setText("French");
         sidePanelLeft.add(button5);
 
-        
-        
-
-        
-        
+    
 
         setTitle("GradeSaver");
         setLayout(null);
@@ -96,6 +91,12 @@ public class GUI extends JFrame implements Action{
         setIconImage(image.getImage());
         getContentPane().setBackground(new Color(3,50,250));
 
+    }
+
+    //if you aren't overriding correctly this makes the compiler tell you
+    protected void paintComponent(Graphics gr){
+
+        gr.drawString("string literal or a string variable", 0,10);
     }
 
     @Override
