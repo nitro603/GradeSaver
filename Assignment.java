@@ -67,7 +67,21 @@ public class Assignment {
     //method to return assignment as a string 
     public String toString()
     {
-        return name + "\nGrade: " + grade + "\nWeight: " + weight;
+        return "\n" + name + "\nGrade: " + grade + "\nWeight: " + weight;
+    }
+
+    //method to check if assignment is equal to another assignment
+    public boolean equals(Object obj)
+    {
+        boolean result = obj instanceof Assignment;
+        if(!result)
+            return false;
+        Assignment rhs = (Assignment)obj;
+        //when comparing assignments, multiply weight and grade by 100 to preserve 2 deciaml places
+        // and make them ints, because comparing doubles can cause issues
+        return rhs.name.equals(this.name) 
+                && (int)(rhs.weight * 100) == (int)(this.weight * 100)
+                && (int)(rhs.grade * 100) == (int)(this.grade * 100);
     }
 
     public static void main(String [] Args)
@@ -81,7 +95,10 @@ public class Assignment {
         System.out.println(test.getWeight());
         System.out.println(test.getName());
 
-
         System.out.println(test.calculateWeighted());
+
+        Assignment test2 = new Assignment("Quiz", 25, 90);
+
+        System.out.println(test.equals(test2));
     }
 }
