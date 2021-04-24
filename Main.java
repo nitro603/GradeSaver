@@ -26,7 +26,18 @@ public class Main{
         //ask user for the course name
         System.out.println("Please enter course name: ");
         courseName = kybd.next();
-        //try to delete the
+        //try to delete the course
+        try{
+            students.get(index).deleteCourse(courseName);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage())
+        }
+
+        //go back to the courses menu
+        coursesMenu(kybd, students, index);
+        return;
     }
 
     //method to add a course
