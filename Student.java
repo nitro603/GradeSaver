@@ -29,7 +29,7 @@ public class Student {
         //if index is less than 0, then course was not foudn; throw exception
         if(index < 0)
         {
-            throw new Exception()
+            throw new Exception("Error: ")
         }
     }
 
