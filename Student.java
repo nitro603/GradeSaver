@@ -24,18 +24,12 @@ public class Student {
     //method to delete a course 
     public void deleteCourse(String courseName)
     {
-        int index;
-
-        try{
-             //find the course's index by its name
-             index = getCourseIndex(courseName);
-             //get the course by its index and delete it 
-             
-
-        }
-        catch(Exception e)
+        //find index of the course by its name
+        int index = getCourseIndex(courseName);
+        //if index is less than 0, then course was not foudn; throw exception
+        if(index < 0)
         {
-            System.out.println(e.getMessage());
+            throw new Exception()
         }
     }
 
