@@ -29,7 +29,11 @@ public class Student {
         //if index is less than 0, then course was not foudn; throw exception
         if(index < 0)
         {
-            throw new Exception("Error: ")
+            throw new Exception("Error: no course was found");
+        }
+        else{
+            //if course was found, delete the course from index from the list of courses
+            courses(index).remove();
         }
     }
 
