@@ -122,7 +122,6 @@ public class Course {
         }
         return "Course: " + this.courseName + "\nProfessor: " + this.profName 
         + "\nGrade: " + this.courseGrade 
-        + "\nAssignments: " + this.numberOfAssignments 
-        + assignmentsInfo;
+        + "\nAssignments: " + assignmentsInfo;
     }
 } 

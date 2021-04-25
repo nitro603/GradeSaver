@@ -1,8 +1,13 @@
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-
 import javax.swing.*;
+
+
+//things to do
+//add the upper part of the text in sidePanel so that you can see it
+//make textfield invisible until it appears when you press a button
+//add a button to enter in grades and weight of them
 
 public class GUI extends JFrame implements Action{
     
@@ -11,6 +16,9 @@ public class GUI extends JFrame implements Action{
     private JButton button3;
     private JButton button4;
     private JButton button5;
+    JTextField assignmentInputField = new JTextField();
+    JTextField gradeInputField = new JTextField();
+    JTextField weightInputField = new JTextField();
 
 
     GUI(){
@@ -41,6 +49,10 @@ public class GUI extends JFrame implements Action{
         sidePanelRight.setLayout(null);
         sidePanelRight.setBackground(new Color(120,40,200));
 
+        //User input fields
+        assignmentInputField = new JTextField();
+        gradeInputField = new JTextField();
+
         JLabel menu = new JLabel();
         menu.setBounds(250, 50, 50, 40);
         sidePanelRight.add(menu);
@@ -50,6 +62,12 @@ public class GUI extends JFrame implements Action{
         button1.addActionListener(e -> menu.setText("<html>Hello World!<br/>blahblahblah</html>"));
         button1.setText("Math");
         sidePanelLeft.add(button1);
+        assignmentInputField.setBounds(10, 50, 150, 25);
+        gradeInputField.setBounds(170, 50, 50, 25);
+        weightInputField.setBounds(230, 50, 50, 25);
+        sidePanelRight.add(assignmentInputField);
+        sidePanelRight.add(gradeInputField);
+        sidePanelRight.add(weightInputField); 
 
         button2 = new JButton();
         button2.setBounds(10, 85, 225, 50);
@@ -57,6 +75,7 @@ public class GUI extends JFrame implements Action{
         button2.setFocusable(false);
         button2.setBackground(Color.lightGray);
         sidePanelLeft.add(button2);
+        
 
         button3 = new JButton();
         button3.setBounds(10, 145, 225, 50);
@@ -73,7 +92,6 @@ public class GUI extends JFrame implements Action{
         button5.setText("French");
         sidePanelLeft.add(button5);
 
-    
 
         setTitle("GradeSaver");
         setLayout(null);
@@ -93,11 +111,6 @@ public class GUI extends JFrame implements Action{
 
     }
 
-    //if you aren't overriding correctly this makes the compiler tell you
-    protected void paintComponent(Graphics gr){
-
-        gr.drawString("string literal or a string variable", 0,10);
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

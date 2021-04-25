@@ -2,11 +2,11 @@ import java.util.*;
 
 public class Main{
     
-    public static void main(String[]args)throws Exception{
+    public static void main(String[]args) throws Exception{
         
         new GUI();
         
-        //ASrrayList<Student> students = new ArrayList<Student>();
+        //ArrayList<Student> students = new ArrayList<Student>();
         //scanner to read input
         //Scanner kybd = new Scanner(System.in);
         //present student with log in menu and read in the choice
@@ -15,12 +15,31 @@ public class Main{
         //int index = logIn(kybd, students);
         //present user and course info and menu of choices
         //coursesMenu(kybd, students, index);
-        //openCourse(kybd, students, index);
+        //int courseIndex = 
+        //openCourseMenu(kybd, students, index);
         //kybd.close();
     }
 
+    //method to open the course by course name 
+    public static void openCourse(Scanner kybd, ArrayList<Student> students, int index) throws Exception
+    {
+        String courseName;
+        //ask user for the course name
+        System.out.println("Please enter course name: ");
+        courseName = kybd.next();
+        //find course's index
+        int courseIndex = students.get(index).getCourseIndex(courseName);
+        //if no course found, go back to courses menu
+        if(courseIndex < 0)
+        {
+            System.out.println("Error: course " + courseName + " was not found");
+            coursesMenu(kybd, students, index);
+        }
+        else{
+        }
+    }
     //method to delete the course
-    public static void deleteTheCourse(Scanner kybd, ArrayList<Student> students, int index)
+    public static void deleteTheCourse(Scanner kybd, ArrayList<Student> students, int index) throws Exception
     {
         String courseName;
         //ask user for the course name
@@ -49,7 +68,8 @@ public class Main{
         courseName = kybd.next();
         System.out.println("Please enter Professor's name: ");
         profName = kybd.next();
-        //try to add a course
+        try{
+            // to add a course
             students.get(index).addCourse(courseName, profName);
         }
         catch(Exception e)
@@ -63,7 +83,7 @@ public class Main{
 
 
     //method to present user with courses info and choice options
-    public static void coursesMenu(Scanner kybd, ArrayList<Student> students, int index)
+    public static void coursesMenu(Scanner kybd, ArrayList<Student> students, int index) throws Exception
     {
         String choice;
         System.out.println(students.get(index));
@@ -78,7 +98,7 @@ public class Main{
         else if(choice.equals("3"))
         {
             //call delete course method, call courses menu again
-            deleteCourse(kybd, students, index);
+            //deleteCourse(kybd, students, index);
             coursesMenu(kybd, students, index);
         }
         else if(choice.equals("4"))
@@ -87,7 +107,8 @@ public class Main{
         }
         else if(choice.equals("1"))
         {
-            //call open course method through main
+            openCourse(kybd, students, index);
+            coursesMenu(kybd, students, index);
             return;
         }
         //for any other input prompt to reenter 

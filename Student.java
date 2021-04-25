@@ -50,6 +50,7 @@ public class Student {
         }
     }
 
+    
     //method to get course by its index
     public Course getCourse(int index)
     {
