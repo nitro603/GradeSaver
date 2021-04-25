@@ -23,7 +23,7 @@ public class Course {
 
     //method to create and add the assignment to assignment array and update grade for the course
     //when adding assignments, throw exception if assignment with such name exists
-    public void addAssignment(String name, double weigth, double grade) throws Exception 
+    public void addAssignment(String name, double weight, double grade) throws Exception 
     {
         //loop through existing assignments, checking if assignement name is already taken
         for(int i = 0; i < assignments.size(); i++)
@@ -40,7 +40,7 @@ public class Course {
     }
     //method to delete assignment from the array and update course grade
     //if assignment was not found, throw exception
-    public void deleteAssignemnt(String name) throws Exception
+    public void deleteAssignemnt(String name) 
     {
         int index;
         try{
@@ -94,7 +94,7 @@ public class Course {
     }
 
     public String getProfessorName(){
-        return this.professorName;
+        return profName;
     }
 
     public double getCourseGrade(){

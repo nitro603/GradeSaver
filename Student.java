@@ -3,20 +3,13 @@ import java.util.*;
 public class Student {
     
     private String name;
-    private String id;
-    private ArrayList<Course> courses = new ArrayList<Course>();
+    private int id;
+    ArrayList<Course> courses = new ArrayList<Course>();
 
-    public Student(String name, String id)
+    public Student(String name, int id)
     {
         this.name = name;
         this.id = id;
-    }
-    //constructor to create  a copy of an object
-    public Student(Student student)
-    {
-        this.name = student.name;
-        this.id = studnet.id;
-        this.courses =  
     }
 
     //method to add a course into course list
@@ -27,7 +20,7 @@ public class Student {
         for(int i = 0; i < courses.size(); i++)
         {
             //if course has the same as another, throw exception
-            if(courses.get(i).getCourseName().equals(courseName))
+            if(courses.get(i).getCourseName().equals(name))
             {
                 throw new Exception("Error: course " + name + " already exists");
             }
@@ -46,10 +39,9 @@ public class Student {
         }
         catch(Exception e)
         {
-            System.our.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
-
     
     //method to get course by its index
     public Course getCourse(int index)
@@ -78,7 +70,7 @@ public class Student {
         return name;
     }
     //method to get student's id
-    public String getId() 
+    public int getId() 
     {
         return id;
     }
@@ -96,6 +88,6 @@ public class Student {
         {
             coursesInfo += "\n" + courses.get(i).getCourseName() + "   " + courses.get(i).getCourseGrade();
         }
-        return "Name: " + this.name + "\nID: " + this.id + "\n" + coursesInfo;
+        return "Name: " + this.name + "\nID: " + this.id + coursesInfo;
     }
 }
